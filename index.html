@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>我的自動化行事曆</title>
+  <!-- 引入 FullCalendar 核心與繁體中文語系 -->
   <script src="https://jsdelivr.net"></script>
   <style>
     body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f7f6; }
@@ -21,8 +22,7 @@
       const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
         locale: 'zh-tw',
-        // 預先讀取同資料夾底下的 events.json 檔案
-        events: './events.json', 
+        events: './events.json',
         eventClick: function(info) {
           if (info.event.url) {
             window.open(info.event.url, '_blank');
